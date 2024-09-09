@@ -34,6 +34,7 @@ sudo yum install mtr
 Once `mtr` is installed, you can run the program using Python 3 with the following command:
 
 ```bash
+cd starlink_probing
 python3 tance_backbone.py <server_name>
 ```
 
