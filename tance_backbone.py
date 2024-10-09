@@ -1,6 +1,5 @@
 import os
 import sys
-from multiprocessing import Process
 import subprocess
 import shutil
 
@@ -28,8 +27,6 @@ if os.path.exists(output_path):
     shutil.rmtree(output_path)
 os.makedirs(output_path)
 
-# 为每个文件启动一个独立的进程
 for filename, ips in file_ips.items():
     output_file = os.path.join(output_path, filename + '.txt')
-    p = Process(target=trace_mtr, args=(output_file, ips))
-    p.start()
+    trace_mtr(output_file, ips)
