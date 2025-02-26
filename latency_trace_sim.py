@@ -155,4 +155,4 @@ if __name__ == "__main__":
 #python3 latency_trace_sim.py "sydyaus1_TO-04_Nuku'alofa" 75 3 1800
 #python3 latency_trace_sim.py "acklnzl1_TO-04_Nuku'alofa" 75 3 1800
 #python3 latency_trace_sim.py "frntdeu1_YT-YT_Mayotte" 75 3 86400
-#python3 latency_trace_sim.py "sydyaus1_NR-14_Yaren" 75 3 86400
+#python3 latency_trace_sim.py "sydyaus1_NR-14_Yaren" 75 3 43200
