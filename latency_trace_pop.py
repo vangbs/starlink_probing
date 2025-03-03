@@ -106,4 +106,4 @@ if __name__ == "__main__":
     time_horizon = float(sys.argv[4])  # 时间范围（秒）
     main(input_name, sample_size, time_step, time_horizon)
 
-#python3 latency_trace_pop.py "sydyaus1_NR-14_Yaren" 150 3 86400
+#python3 latency_trace_pop.py "sydyaus1_NR-14_Yaren" 50 1 7200
