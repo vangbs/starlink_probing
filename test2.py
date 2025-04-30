@@ -2,7 +2,7 @@ from scapy.all import *
 import time
 
 # ========== 用户配置 ==========
-TARGET_IP = "2406:2d40:7383:5700::1"   # 目标 IPv6 地址
+TARGET_IP = "2406:2d40:73a0:6600::1"   # 目标 IPv6 地址
 TARGET_PORT = 54321                    # UDP 端口
 PAYLOAD = b"test"                      # 数据包内容
 TIMEOUT = 3.0                          # 最长等待时间（秒）
