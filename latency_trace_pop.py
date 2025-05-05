@@ -64,7 +64,8 @@ def main(input_name, sample_size, time_step, time_horizon):
     reachable_ips = run_for_pinging(input_file, output_dir, 0)
     print(f"Initial scan found {len(reachable_ips)} reachable IPs.")
 
-    selected_ips = forced_ips
+    #selected_ips = forced_ips
+    selected_ips = []
 
     # 计算还需要多少个 IP
     remaining_needed = sample_size - len(selected_ips)
@@ -106,3 +107,4 @@ if __name__ == "__main__":
     main(input_name, sample_size, time_step, time_horizon)
 
 #python3 latency_trace_pop.py "sydyaus1_NR-14_Yaren" 102 3 3600
+#python3 latency_trace_pop.py "sydyaus1_TO-04_Nuku'alofa" 100 3 3600
