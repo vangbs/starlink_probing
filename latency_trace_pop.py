@@ -56,19 +56,16 @@ def main(input_name, sample_size, time_step, time_horizon):
         all_ips = [line.strip() for line in file if line.strip()]
 
     # 需要优先选择的 IP 列表
-    '''
     forced_ips = [
         "203.98.224.3",
         "203.98.224.11",
     ]
-    '''
-    forced_ips = []
     
     reachable_ips = run_for_pinging(input_file, output_dir, 0)
     print(f"Initial scan found {len(reachable_ips)} reachable IPs.")
 
-    #selected_ips = forced_ips
-    selected_ips = []
+    selected_ips = forced_ips
+    #selected_ips = []
 
     # 计算还需要多少个 IP
     remaining_needed = sample_size - len(selected_ips)
