@@ -8,22 +8,16 @@ output_path = 'backbone'
 # 确保输出文件夹存在
 os.makedirs(output_path, exist_ok=True)
 
-def islegal(filename):
-    for a in ['clgycan1', 'mlnnita1', 'wrswpol1','dohaqat1']:
-        if a in filename:
-            return True
-    return False
-
 # 遍历文件夹中的所有文件
 for filename in os.listdir(folder_path):
-    if filename.endswith('.txt') and islegal(filename):
+    if filename.endswith('.txt'):
         input_file = os.path.join(folder_path, filename)
         output_file = os.path.join(output_path, filename.replace('.txt', '.warts'))
         
         # 执行 scamper 命令
         command = [
             "scamper",
-            "-p", "2000",
+            "-p", "10000",
             "-c", "trace -P icmp-paris -q 3 -Q",
             "-f", input_file,
             "-O", "warts",
