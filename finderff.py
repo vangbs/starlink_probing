@@ -74,19 +74,17 @@ def extract(trace_data):
     '''
     return last_matching_hop
 
-'''
 pops = [
-    "acklnzl1", "mnlaphl1", "sydyaus1", "ashnvax2", "atlagax1", "bgtacol1", "bnssarg1", "chcoilx1",
-    "dllstxx1", "frtabra1", "limaper1", "mmmiflx1", "mplsmnx1", "nwyynyx1", "qrtomex1", 'dohaqat1',
-    "sntochl1", "splobra1", "dnvrcox1", "lsancax1", "sltyutx1", "snjecax1", "sttlwax1", 'sfiabgr1',
-    "tmpeazx1", "frntdeu1", "lgosnga1", "lndngbr1", "mdrdesp1", "prthaus1", "sngesgp1", "tkyojpn1",
-    'jtnaidn1'
+    "acklnzl1", "mnlaphl1", "sydyaus1", "ashnvax2", "atlagax1",
+    "bgtacol1", "bnssarg1", "chcoilx1", "clgycan1", "chrhnzl1",
+    "dohaqat1", "dllstxx1", "frtabra1", "gtmygtm1", "jhngzaf1",
+    "limaper1", "mlnnita1", "mmmiflx1", "mlbeaus1", "mplsmnx1",
+    "nwyynyx1", "qrtomex1", "sntochl1", "splobra1", "dnvrcox1",
+    "lsancax1", "sltyutx1", "snjecax1", "sttlwax1", "sfiabgr1",
+    "tmpeazx1", "frntdeu1", "lgosnga1", "lndngbr1", "mdrdesp1",
+    "prthaus1", "sngesgp1", "tkyojpn1", "wrswpol1"
 ]
-'''
 
-pops = [
-    'clgycan1', 'mlnnita1', 'wrswpol1','dohaqat1'
-]
 def islegal(filename):
     for a in pops:
         if a in filename:
