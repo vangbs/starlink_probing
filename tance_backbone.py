@@ -16,7 +16,7 @@ for filename in os.listdir(folder_path):
 
 def run_mtr(ip, output_file):
     with open(output_file, 'a') as f:
-        subprocess.run(["mtr", "-r", "-i", "1", "-c", "25", "-n", ip], stdout=f)
+        subprocess.run(["mtr", "-r", "-i", "1", "-c", "10", "-n", ip], stdout=f)
 
 def trace_mtr(filename, ips):
     for ip in ips:
