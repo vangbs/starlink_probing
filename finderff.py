@@ -53,8 +53,8 @@ def extract(trace_data):
                         next_hop['addr'] == trace_data['dst']):
                         last_matching_hop = hop
                         break
-    if last_matching_hop and last_matching_hop['addr'] == '2620:134:b0ff::70':
-        print(trace_data['dst'])
+    #if last_matching_hop and last_matching_hop['addr'] == '2620:134:b0ff::70':
+    #    print(trace_data['dst'])
     if last_matching_hop:
         return last_matching_hop
     '''
@@ -74,6 +74,7 @@ def extract(trace_data):
     '''
     return last_matching_hop
 
+'''
 pops = [
     "acklnzl1", "mnlaphl1", "sydyaus1", "ashnvax2", "atlagax1",
     "bgtacol1", "bnssarg1", "chcoilx1", "clgycan1", "chrhnzl1",
@@ -84,22 +85,23 @@ pops = [
     "tmpeazx1", "frntdeu1", "lgosnga1", "lndngbr1", "mdrdesp1",
     "prthaus1", "sngesgp1", "tkyojpn1", "wrswpol1"
 ]
-
 def islegal(filename):
     for a in pops:
         if a in filename:
             return True
     return False
+'''
 
 # 创建输出目录
 os.makedirs(pop_output_path, exist_ok=True)
 
 # 初始化每个 POP 的 IP 列表
-pop_results = {pop: set() for pop in pops}
+pop_results = defaultdict(set)
 
 # 遍历输入文件夹
 for filename in os.listdir(input_path):
-    if filename.endswith('.txt') and islegal(filename):
+    if filename.endswith('.txt'): # and islegal(filename):
+        
         name = filename.replace('.txt', '')
         warts_file = f"{output_path}/{name}.warts"
         json_file = f"{json_path}/{name}.json"
@@ -116,9 +118,8 @@ for filename in os.listdir(input_path):
                 if item['type'] == 'trace':
                     result = extract(item)
                     if result:
-                        for pop in pops:
-                            if pop in filename:  # 判断文件名是否包含 POP
-                                pop_results[pop].add(result['addr'])
+                        pop = name.split('_')[0]
+                        pop_results[pop].add(result['addr'])
 
             # 删除 JSON 文件
             os.remove(json_file)
